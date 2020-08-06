@@ -1,11 +1,29 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
-import ElementUI from 'element-ui';
+import ElementUI, { Container } from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-Vue.use(ElementUI);
+import { registerMicroApps, start } from "qiankun";
 
 Vue.config.productionTip = false
+Vue.use(ElementUI);
+
+const apps = [
+  {
+    name: 'vueApp',
+    entry: 'http://localhost:10000',//默认会加载这个html，解析里面的 js 动态的执行（子应用必须支持跨域） 使用的是 fetch拉取资源
+    container: '/vue'
+  },
+  {
+    name: 'reactApp',
+    entry: 'http://localhost:20000',//默认会加载这个html，解析里面的 js 动态的执行（子应用必须支持跨域） 使用的是 fetch拉取资源
+    container: '/react'
+  },
+]
+
+registerMicroApps(apps)
+start()
+
 
 new Vue({
   router,
