@@ -7,14 +7,14 @@ Vue.config.productionTip = false
 new Vue({
   router,
   render: function (h) { return h(App) }
-}).$mount('#app')
+}).$mount('#qiankun-vue-app')
 
 let instance = null
 function render(props) {
   new Vue({
     router,
     render: h => h(App)
-  }).$mount('#app')
+  }).$mount('#qiankun-vue-app')
 }
 
 if (window.__POWERED_BY_QIANKUN__) {
