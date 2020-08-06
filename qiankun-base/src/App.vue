@@ -1,6 +1,6 @@
 <template>
   <div
-    id="app">
+    id="qiankun-base-app">
     <div
       class="qiankun-base">
       <div
