@@ -1,7 +1,43 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import { BrowserRouter, Route, Link } from "react-router-dom";
+
+
+
+
+function App() {
+  return (
+    <BrowserRouter basename='/react'>
+      <Link to='/'>
+        qiankun-react首页
+      </Link>
+
+      <Link to='/about'>
+        qiankun-react关于页面
+      </Link>
+
+      <Route path='/' exact render={
+        () => (
+          <h1>qiankun-react index页面</h1>
+        )
+      }>
+      </Route>
+
+      <Route path='/about' exact render={
+        () => (
+          <h1>qiankun-react关于页面</h1>
+        )
+      }>
+      </Route>
+
+
+
+
+    </BrowserRouter>
+  )
+
+}
 
 
 
