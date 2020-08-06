@@ -28,8 +28,6 @@ registerApplication('myVueApp',
 )
 start();
 
-window.localStorage.setItem('xxxx', 'xxx')
-
 new Vue({
   router,
   render: h => h(App)
